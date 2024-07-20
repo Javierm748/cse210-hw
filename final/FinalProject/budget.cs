@@ -4,22 +4,31 @@ public class Budget
 {
     public string Category { get; set; }
     public decimal BudgetAmount { get; set; }
-    public decimal SpentAmount { get; set; }
+    private decimal SpentAmount { get; set; }
 
     public void SetBudget(string category, decimal amount)
     {
-        // Set budget logic
+        this.Category = category;
+        this.BudgetAmount = amount;
+        Console.WriteLine("Budget set: " + amount + " for " + category);
     }
 
     public decimal GetBudget()
     {
-        // Get budget logic
         return BudgetAmount;
     }
 
     public bool CheckBudget(string category, decimal amount)
     {
-        // Check budget logic
-        return true;
+        if (this.Category == category && this.SpentAmount + amount > this.BudgetAmount)
+        {
+            Console.WriteLine("Budget exceeded for " + category);
+            return false;
+        }
+        else
+        {
+            this.SpentAmount += amount;
+            return true;
+        }
     }
 }

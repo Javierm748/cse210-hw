@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class Category
 {
-    public List<string> ExpenseCategories { get; set; }
-    public List<string> IncomeCategories { get; set; }
+    public List<string> ExpenseCategories { get; private set; }
+    public List<string> IncomeCategories { get; private set; }
 
     public Category()
     {
@@ -14,17 +14,34 @@ public class Category
 
     public void AddCategory(string category, bool isExpense)
     {
-        // Add category logic
+        if (isExpense)
+        {
+            ExpenseCategories.Add(category);
+            Console.WriteLine("Expense category added: " + category);
+        }
+        else
+        {
+            IncomeCategories.Add(category);
+            Console.WriteLine("Income category added: " + category);
+        }
     }
 
     public void RemoveCategory(string category, bool isExpense)
     {
-        // Remove category logic
+        if (isExpense)
+        {
+            ExpenseCategories.Remove(category);
+            Console.WriteLine("Expense category removed: " + category);
+        }
+        else
+        {
+            IncomeCategories.Remove(category);
+            Console.WriteLine("Income category removed: " + category);
+        }
     }
 
     public List<string> GetCategoryList(bool isExpense)
     {
-        // Get category list logic
         return isExpense ? ExpenseCategories : IncomeCategories;
     }
 }

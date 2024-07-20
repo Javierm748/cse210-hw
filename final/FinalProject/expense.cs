@@ -7,13 +7,6 @@ public class Expense : Transaction
 
     public override string GetDetails()
     {
-        // Get expense details logic
-        return "";
-    }
-
-    public string GetExpenseType()
-    {
-        // Get expense type logic
-        return ExpenseType;
+        return $"Expense: {Amount} for {Category} on {Date}. Type: {ExpenseType}.";
     }
 }

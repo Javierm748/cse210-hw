@@ -1,0 +1,5 @@
+Summary of the Changes Made:
+Ensured all classes and methods meet the criteria for abstraction, encapsulation, inheritance, and polymorphism.
+Provided private access to internal details where necessary.
+Demonstrated polymorphism by overriding the GetDetails method in Income and Expense classes.
+Ensured the project performs an interesting and useful function for personal finance management.
